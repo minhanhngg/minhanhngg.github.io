@@ -1,0 +1,127 @@
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: rgb(216, 150, 112);
+            text-align: center;
+            font-family: 'Abril Fatface', serif;
+        }
+        
+        button {
+            background-color: rgb(216, 150, 112);
+            ;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        input[type=number] {
+            border: 3px solid #555;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 100%;
+        }
+        
+        select,
+        option {
+            background-color: rgb(216, 150, 112);
+            border: 3px solid #555;
+            border-radius: 4px;
+            margin: 10px;
+            font-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <br>
+    <style>
+        .container {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+    <h1> Currency Converter</h1>
+    <br>
+    <p> This is the currency converter from foreign currencies to HKD </p>
+
+
+    <select style="height: 44px" onchange="Currency(); Calculate()" id="converter">
+        <option value="">Currency</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GDP">GDP</option>
+      </select>
+
+
+
+    <input id="value1" type="number" value="100" oninput="Calculate()">
+
+    <br>
+    <br>
+
+    <button id="convert">Convert</button>
+    <br>
+    <br> Amount (HKD):
+    <input id="value2" type="number" disabled="disabled">
+
+
+    <script>
+        function Currency() {
+            y = document.getElementById("converter").value;
+            return y;
+        }
+
+        function Calculate() {
+            y = Currency();
+
+            x = document.getElementById("value1").value;
+
+            if (x == "") {
+                document.getElementById("value2").value = "";
+            } else {
+                switch (y) {
+                    case "USD":
+                        document.getElementById("value2").value = x * 7.87;
+                        break;
+
+                    case "GDP":
+                        document.getElementById("value2").value = x * 10.31;
+                        break;
+
+                    case "EUR":
+                        document.getElementById("value2").value = x * 8.93;
+                        break;
+                }
+            }
+        }
+    </script>
+
+
+</body>
