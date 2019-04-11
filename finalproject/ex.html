@@ -1,0 +1,279 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+            font-family: 'Abril Fatface', serif;
+        }
+        
+        p {
+            text-align: justify;
+        }
+        
+        h1 {
+            color: rgb(216, 150, 112);
+            text-align: center;
+        }
+        
+        h2 {
+            color: rgb(216, 150, 112);
+            text-align: center;
+        }
+        
+        h1 {
+            top: 0;
+            left: 0;
+            background-color: white;
+            margin: 0;
+            width: 100%;
+            padding-top: 1em;
+        }
+        
+        body {
+            color: black;
+            text-align: center;
+            margin: 2em;
+        }
+        
+        img {
+            max-width: 90%;
+        }
+        
+        #container,
+        #container2 {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto
+        }
+        
+        button {
+            background-color: rgb(216, 150, 112);
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        a:link {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: rgb(216, 150, 112);
+            background-color: transparent;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#purpose').on('change', function() {
+                if (this.value == "1") {
+                    $("#container").show();
+                } else {
+                    $("#container").hide();
+                }
+            });
+        });
+        $(document).ready(function() {
+            $('#purpose').on('change', function() {
+                if (this.value == "2") {
+                    $("#container2").show();
+                } else {
+                    $("#container2").hide();
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+    <h1>DATA ANALYSIS & VISUALIZATION: LABOUR PARTICIPATION CHARACTERISTICS</h1>
+    <H3>Location: Hong Kong</H3><br><br>
+
+    <select id='purpose'>
+            
+            <option value="1">Economically Active</option>
+            <option value="2">Economically Inactive</option>
+            </select>
+    <br><br><br><br>
+    <script src="../Highcharts-7/code/highcharts.js"></script>
+    <script src="../Highcharts-7/code/modules/series-label.js"></script>
+    <script src="../Highcharts-7/code/modules/exporting.js"></script>
+    <script src="../Highcharts-7/code/modules/export-data.js"></script>
+
+    <div id="container"></div>
+
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+
+            title: {
+                text: 'Population aged 15 and over by economic activity status and sex'
+            },
+
+            subtitle: {
+                text: 'Economically active'
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Population (thousand people)'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+
+                        connectorAllowed: false
+                    },
+
+                }
+            },
+
+            xAxis: {
+
+                categories: ['1986', '1991', '1996', '2001', '2006', '2011', '2015', '2016', '2017']
+            },
+
+            series: [{
+
+                name: 'Female',
+                data: [986.0, 1048.0, 1236.1, 1463.8, 1621.2, 1760.4, 1906.0, 1924.3, 1952.2]
+            }, {
+                name: 'Male',
+                data: [1713.7, 1756.1, 1924.7, 1963.5, 1950.6, 1942.7, 1997.2, 1995.8, 1994.4]
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+    </script>
+
+
+    <div id="container2"></div>
+
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container2', {
+
+            title: {
+                text: 'Population aged 15 and over by economic activity status and sex'
+            },
+
+            subtitle: {
+                text: 'Economically inactive'
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Population (thousand people)'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+
+                        connectorAllowed: false
+                    },
+
+                }
+            },
+
+            xAxis: {
+
+                categories: ['1986', '1991', '1996', '2001', '2006', '2011', '2015', '2016', '2017']
+            },
+
+            series: [{
+
+                name: 'Female',
+                data: [1030.4, 1139.5, 1350.5, 1419.6, 1461.4, 1564.1, 1576.0, 1587.4, 1592.6]
+            }, {
+                name: 'Male',
+                data: [415.6, 469.2, 617.5, 725.3, 799.0, 897.1, 904.5, 913.4, 924.1]
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+    </script>
+</body>
