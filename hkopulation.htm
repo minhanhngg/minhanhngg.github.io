@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <h1>Hong Kong Median Monthly Income from Main Employment by Year, Sex and District Council District</h1>
+    <h3>Male</h3>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="Highmaps-7.0.3/code/highmaps.js"></script>
+    <script src="Highmaps-7.0.3//code/modules/data.js"></script>
+    <script src="Highmaps-7.0.3/code/modules/exporting.js"></script>
+    <script src="Highmaps-7.0.3/code/modules/offline-exporting.js"></script>
+    <!-- <script src="../../code/mapdata/custom/world.js"></script> -->
+    <script src="world.js"></script>
+
+    <div id="container" style="height: 500px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
+
+
+
+    <script type="text/javascript">
+        // Prepare random data
+        var data = [
+            ['Central & Western', 24540],
+            ['Wan Chai', 25500],
+            ['Eastern', 18500],
+            ['Southern', 18000],
+            ['Yau Tsim Mong', 17000],
+            ['Sham Shui Po', 15300],
+            ['Kowloon City', 18000],
+            ['Wong Tai Sin', 15000],
+            ['Kwun Tong', 15000],
+            ['Kwai Tsing', 15000],
+            ['Tsuen Wan', 18000],
+            ['Tuen Mun', 16000],
+            ['Yuen Long', 16000],
+            ['North', 16000],
+            ['Tai Po', 17500],
+            ['Sha Tin', 18000],
+            ['Sai Kung', 20000],
+            ['Islands', 18100]
+        ];
+
+        $.getJSON('dc_land.lowres.geo.json', function(geojson) {
+
+            // Initiate the chart
+            Highcharts.mapChart('container', {
+                chart: {
+                    map: geojson
+                },
+
+                title: {
+                    text: 'GeoJSON in Highmaps'
+                },
+
+                mapNavigation: {
+                    enabled: true,
+                    buttonOptions: {
+                        verticalAlign: 'bottom'
+                    }
+                },
+
+                colorAxis: {
+                    tickPixelInterval: 100
+                },
+
+                series: [{
+                    data: data,
+                    keys: ['DC_ENG', 'value'],
+                    joinBy: 'DC_ENG',
+                    name: 'Median Income',
+                    color: ' #edb1d8',
+                    states: {
+                        hover: {
+                            color: ' #edb1d8'
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.properties.postal}'
+                    }
+
+                }],
+                tooltip: {
+                    pointFormat: '{point.DC_ENG}: {point.value} HKD'
+                },
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
