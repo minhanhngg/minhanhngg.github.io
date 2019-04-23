@@ -46,7 +46,7 @@ in order to use it you can just put your part under the <div class="section"...>
     <div id="fullpage">
         <!-- <div class="section active" id="section0" style="background-image: linear-gradient(to bottom right, #667eea, #764ba2)"> -->
         <div class="section active" id="section0">
-            <blockquote>
+            <blockquote style="margin: auto">
                 <p class="quotation">
                     Gender equality is more than a goal in itself. It is a precondition for meeting the challenge of reducing poverty, promoting sustainable development and building good governance.</p>
                 <footer style="margin:0;
@@ -317,6 +317,11 @@ in order to use it you can just put your part under the <div class="section"...>
             navigationTooltips: ['First page', 'Second page', 'Third and last page'],
             slidesNavigation: true,
             controlArrows: true,
+            responsiveWidth: 600,
+            responsiveHeight: 600,
+            afterResponsive: function(isResponsive) {
+
+            }
         });
     </script>
 
