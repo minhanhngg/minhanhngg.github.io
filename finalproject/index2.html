@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Active Slide - fullPage.js</title>
+    <meta name="author" content="Matthew Howell" />
+    <meta name="description" content="fullPage continuous scrolling demo." />
+    <meta name="keywords" content="fullpage,jquery,demo,scroll,loop,continuous" />
+    <meta name="Resource-type" content="Document" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../fullPage.js-master/dist/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="../fullPage.js-master/examples/examples.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style type="text/css">
+        #container,
+        #container2 {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto
+        }
+    </style>
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <ul id="menu">
+        <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Introduction</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
+        <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
+    </ul>
+
+    <div id="fullpage">
+        <div class="section active" id="section0" style="background-image: linear-gradient(to bottom right, #667eea, #764ba2)">
+            <h1>Section 1</h1>
+        </div>
+        <div class="section" id="section1" style="background-image: linear-gradient(to bottom left, #ff9a9e, #fad0c4)">
+            <div class="slide" id="slide1">
+                <div class="intro">
+                    <h1>Slide 2.1</h1>
+                    <iframe data-src="auto-height.html"></iframe>
+                </div>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="intro">
+                    <h1>Slide 2.2</h1>
+                    <p>
+                        We are using the class `active` on this section and in this particular horizontal slide. This way it will appear on the viewport on page load, instead of the 1st section 1st slide.
+                    </p>
+                    <p>You can apply the same logic to horizontal slides</p>
+                </div>
+            </div>
+            <div class="slide" id="slide3">
+                <h1>Slide 2.3</h1>
+            </div>
+
+        </div>
+        <div class="section" id="section2" style="background-image: linear-gradient(#a1c4fd, #c2e9fb)">
+
+            <!-- <div class="intro">
+                <h1>Section 3</h1>
+            </div> -->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+            </script>
+            <script>
+                $(document).ready(function() {
+                    $('#purpose').on('change', function() {
+                        if (this.value == "1") {
+                            $("#container").show();
+                        } else {
+                            $("#container").hide();
+                        }
+                    });
+                });
+                $(document).ready(function() {
+                    $('#purpose').on('change', function() {
+                        if (this.value == "2") {
+                            $("#container2").show();
+                        } else {
+                            $("#container2").hide();
+                        }
+                    });
+                });
+            </script>
+
+
+
+
+
+            <h2>DATA ANALYSIS & VISUALIZATION: LABOUR PARTICIPATION CHARACTERISTICS</h2>
+            <H3>Location: Hong Kong</H3><br><br>
+
+            <select id='purpose'>
+                    <option value="">Economic Status</option>
+                    <option value="1">Economically Active</option>
+                    <option value="2">Economically Inactive</option>
+                    </select>
+            <br><br><br><br>
+            <script src="../Highcharts-7/code/highcharts.js"></script>
+            <script src="../Highcharts-7/code/modules/series-label.js"></script>
+            <script src="../Highcharts-7/code/modules/exporting.js"></script>
+            <script src="../Highcharts-7/code/modules/export-data.js"></script>
+
+            <div id="container" style='display:none'></div>
+
+
+
+            <script type="text/javascript">
+                Highcharts.chart('container', {
+
+                    title: {
+                        text: 'Population aged 15 and over by economic activity status and sex'
+                    },
+
+                    subtitle: {
+                        text: 'Economically active'
+                    },
+
+                    yAxis: {
+                        title: {
+                            text: 'Population (thousand people)'
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle'
+                    },
+
+                    plotOptions: {
+                        series: {
+                            label: {
+
+                                connectorAllowed: false
+                            },
+
+                        }
+                    },
+
+                    xAxis: {
+
+                        categories: ['1986', '1991', '1996', '2001', '2006', '2011', '2015', '2016', '2017']
+                    },
+
+                    series: [{
+
+                        name: 'Female',
+                        data: [986.0, 1048.0, 1236.1, 1463.8, 1621.2, 1760.4, 1906.0, 1924.3, 1952.2]
+                    }, {
+                        name: 'Male',
+                        data: [1713.7, 1756.1, 1924.7, 1963.5, 1950.6, 1942.7, 1997.2, 1995.8, 1994.4]
+                    }],
+
+                    responsive: {
+                        rules: [{
+                            condition: {
+                                maxWidth: 500
+                            },
+                            chartOptions: {
+                                legend: {
+                                    layout: 'horizontal',
+                                    align: 'center',
+                                    verticalAlign: 'bottom'
+                                }
+                            }
+                        }]
+                    }
+
+                });
+            </script>
+
+
+            <div id="container2" style='display:none'></div>
+
+
+
+            <script type="text/javascript">
+                Highcharts.chart('container2', {
+
+                    title: {
+                        text: 'Population aged 15 and over by economic activity status and sex'
+                    },
+
+                    subtitle: {
+                        text: 'Economically inactive'
+                    },
+
+                    yAxis: {
+                        title: {
+                            text: 'Population (thousand people)'
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle'
+                    },
+
+                    plotOptions: {
+                        series: {
+                            label: {
+
+                                connectorAllowed: false
+                            },
+
+                        }
+                    },
+
+                    xAxis: {
+
+                        categories: ['1986', '1991', '1996', '2001', '2006', '2011', '2015', '2016', '2017']
+                    },
+
+                    series: [{
+
+                        name: 'Female',
+                        data: [1030.4, 1139.5, 1350.5, 1419.6, 1461.4, 1564.1, 1576.0, 1587.4, 1592.6]
+                    }, {
+                        name: 'Male',
+                        data: [415.6, 469.2, 617.5, 725.3, 799.0, 897.1, 904.5, 913.4, 924.1]
+                    }],
+
+                    responsive: {
+                        rules: [{
+                            condition: {
+                                maxWidth: 500
+                            },
+                            chartOptions: {
+                                legend: {
+                                    layout: 'horizontal',
+                                    align: 'center',
+                                    verticalAlign: 'bottom'
+                                }
+                            }
+                        }]
+                    }
+
+                });
+            </script>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="../fullPage.js-master/dist/fullpage.js"></script>
+    <script type="text/javascript" src="../fullPage.js-master/examples/examples.js"></script>
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+            menu: '#menu',
+            lazyLoad: true,
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['First page', 'Second page', 'Third and last page']
+        });
+    </script>

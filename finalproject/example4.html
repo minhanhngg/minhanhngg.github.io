@@ -1,0 +1,28 @@
+<html>
+<header>
+    <style>
+        .section {
+            text-align: center;
+            font-size: 3em;
+        }
+    </style>
+</header>
+<div id="fullpage">
+    <div class="section">One</div>
+    <div class="section">
+        <div class="slide" data-anchor="slide1">Two 1</div>
+        <div class="slide" data-anchor="slide2">Two 2</div>
+    </div>
+    <div class="section">Three</div>
+    <div class="section">Four</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.extensions.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    new fullpage('#fullpage', {
+        sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+    });
+</script>
