@@ -20,7 +20,7 @@ body {
     font-weight: 700;
     font-size: .9rem;
     letter-spacing: .1rem;
-    background: rgba(0, 0, 0, 1)!important;
+    background: rgb(255, 255, 255, 1)!important;
 }
 
 .navbar-brand img {
@@ -31,21 +31,21 @@ body {
     padding-right: .7rem;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: white;
+.navbar-light .navbar-nav .nav-link {
+    color: black;
     padding-top: .8rem;
 }
 
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #FFD700;
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #975b79;
 }
 
 
 /* Start of landing page */
 
 .home-inner {
-    background-image: url(img/computers.png);
+    background-image: linear-gradient(to bottom right, rgba(57, 81, 104, 0.6), rgba(216, 150, 205, 0.6)), url(img/gender.jpg);
 }
 
 .caption {
@@ -53,7 +53,7 @@ body {
     max-width: 100%;
     position: absolute;
     top: 38%;
-    z-index: 1;
+    /* z-index: 2; */
     color: white;
     text-transform: uppercase;
 }
@@ -103,15 +103,15 @@ body {
     font-size: 1.2rem;
     text-transform: uppercase;
     margin: 1rem;
-    border-color: #1EBBA3;
-    background-color: #1EBBA3;
+    border-color: #975b79;
+    background-color: #975b79;
     color: white;
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-    border-color: #189582;
-    background-color: #189582;
+    border-color: #975b88;
+    background-color: #975b88;
     color: white;
 }
 
@@ -134,12 +134,12 @@ h3.heading {
 .heading-underline {
     width: 3rem;
     height: .2rem;
-    background-color: #1EBBA3;
+    background-color: #975b79;
     margin: 0 auto 2rem;
 }
 
 .feature svg.svg-inline--fa {
-    color: #1EBBA3;
+    color: #975b79;
 }
 
 .feature h3 {
@@ -153,7 +153,7 @@ h3.heading {
 }
 
 .fixed {
-    background-image: url(img/apple.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/hongkong.jpg);
     z-index: -1;
 }
 
@@ -180,12 +180,12 @@ h3.heading {
 }
 
 blockquote .svg-inline--fa {
-    color: #1EBBA3;
+    color: #975b79;
     margin: 1rem;
 }
 
 .clients-hr {
-    border-top: .05rem solid #1EBBA3;
+    border-top: .05rem solid #975b79;
 }
 
 
