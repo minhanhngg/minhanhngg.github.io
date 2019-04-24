@@ -256,6 +256,14 @@ hr.socket {
 }
 
 
+/* ecoforce */
+
+.ecoforce p {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+
 /* Medium queries */
 
 @media (max-width: 767px) {
