@@ -349,3 +349,15 @@ Extra (xl) large devices (large desktops, 1200px and up)
     transform: translateZ(0);
     will-change: transform;
 }
+
+.carousel-inner {
+    font-size: 3.8rem;
+    font-weight: 700;
+    text-shadow: .1rem .1rem .8rem black;
+    padding-bottom: 1rem;
+}
+
+.carousel-caption {
+    top: 45%;
+    bottom: auto;
+}
