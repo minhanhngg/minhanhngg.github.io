@@ -46,6 +46,7 @@ body {
 
 .home-inner {
     background-image: linear-gradient(to bottom right, rgba(57, 81, 104, 0.6), rgba(216, 150, 205, 0.6)), url(img/gender.jpg);
+    min-height: 1000px;
 }
 
 .caption {
@@ -53,7 +54,7 @@ body {
     max-width: 100%;
     position: absolute;
     top: 38%;
-    z-index: 1;
+    z-index: 2;
     color: white;
     text-transform: uppercase;
 }
@@ -78,6 +79,7 @@ body {
     border-radius: 0;
     padding: .6rem 1.3rem;
     font-size: 1.1rem;
+    z-index: 2;
 }
 
 
@@ -219,12 +221,12 @@ hr.socket {
 
 @media (max-width: 767px) {
     .caption h1 {
-        font-size: 2.3 rem;
-        letter-spacing: .15rem;
+        font-size: 1.7rem;
+        letter-spacing: .1rem;
         padding-bottom: .5rem;
     }
     .caption h3 {
-        font-size: 1.2 rem;
+        font-size: 1rem;
         padding-bottom: 1.2rem;
     }
     .btn-lg {
@@ -238,6 +240,11 @@ hr.socket {
         width: 50%;
         display: block;
         margin: 0 auto;
+    }
+    h1,
+    h2,
+    h3 {
+        font-size: .8rem;
     }
 }
 
