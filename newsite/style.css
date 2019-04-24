@@ -241,6 +241,10 @@ hr.socket {
         display: block;
         margin: 0 auto;
     }
+    .carousel-caption {
+        top: 30%;
+        bottom: auto;
+    }
 }
 
 
@@ -362,4 +366,14 @@ Extra (xl) large devices (large desktops, 1200px and up)
 .carousel-caption {
     top: 45%;
     bottom: auto;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 800px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
