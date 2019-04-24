@@ -166,6 +166,23 @@ h3.heading {
     padding: 7rem 2rem;
 }
 
+.light {
+    background-color: white;
+    padding: 7rem 2rem;
+}
+
+
+/* .light h3 {
+    margin-bottom: 2rem;
+} */
+
+.light p {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
 .fixed-background h3 {
     margin-bottom: 2rem;
 }
