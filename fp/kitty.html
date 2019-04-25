@@ -1,0 +1,496 @@
+<html>
+
+<head>
+    <title>Page Title</title>
+    <style>
+        body {
+            padding: 3%;
+        }
+        
+        h2 {
+            font-size: 40px;
+        }
+        
+        p {
+            font-size: 25px;
+        }
+        
+        #container0,
+        #container1 {
+            max-width: 800px;
+            margin: 1em auto;
+        }
+        
+        input[type="number"] {
+            min-width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/item-series.js"></script>
+    <h2>Pattern of Participation in Public Affairs</h2>
+    <p>In Hong Kong, women and men have equal right to vote and stand for elections. Whilst there were still far more male than female candidates who stood for election as members of different Government Councils, the number of female candidates had registered
+        significant growth over the past 2 decades or so. Except for the age group 71 and over, the turnout rates for both sexes were broadly similar across all age groups in recent years. Males aged 71 and over still had higher turnout rates than their
+        female counterparts in various elections.</p>
+    <div id="containerkitty1" style="min-width: 310px; height: 400px;  max-width: 800px; margin: 0 auto"></div>
+    <div id="containerkitty2" style="min-width: 310px; height: 400px;  max-width: 800px; margin: 0 auto"></div>
+    <div id="container21" style="min-width: 310px; height: 400px;  max-width: 800px; margin: 0 auto"></div>
+    <div id="container22" style="min-width: 310px; height: 400px;  max-width: 800px; margin: 0 auto"></div>
+    <div id="container3" style="min-width: 310px; height: 400px;  max-width: 800px; margin: 0 auto"></div>
+    <div id="container4" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
+    <h2>Social Welfare</h2>
+    <p>The Government provides supports to members of the community who are in need of financial or material assistance to address their basic needs through a non-contributory social security system. The number of females receiving various types of assistance
+        is in general more than that of males.</p>
+    <div id="container5" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
+    <div id="container6" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto "></div>
+    <script src=" https://code.highcharts.com/modules/series-label.js "></script>
+    <!-- Start parliament chart 1 -->
+    <script>
+        Highcharts.chart('containerkitty1', {
+            chart: {
+                type: 'item'
+            },
+            title: {
+                text: 'Candidates, elected members and appointed members in the District Council (based on election year) by sex in 2015'
+            },
+            legend: {
+                labelFormat: '{name} <span style="opacity: 0.4">{y}</span>'
+            },
+            series: [{
+                name: 'Candidates, elected members and appointed members in the District Council (based on election year) by sex in 2015',
+                keys: ['name', 'y', 'color', 'label'],
+                data: [
+                    ['Female Candidate', 181, '#EB001F', 'Female Candidate'],
+                    ['Male Candidate', 754, '#64A12D', 'Male Candidate'],
+                    ['Female Elected Member', 79, '#FFED00', 'Female Elected Member'],
+                    ['Male Elected Member', 352, '#009EE0', 'Male Elected Member'],
+                ],
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.label}'
+                },
+                // Circular options
+                center: ['50%', '88%'],
+                size: '170%',
+                startAngle: -100,
+                endAngle: 100
+            }]
+        });
+    </script>
+    <!-- End parliament chart 1 -->
+    <!-- Start parliament chart 2 -->
+    <script>
+        Highcharts.chart('containerkitty2', {
+            chart: {
+                type: 'item'
+            },
+            title: {
+                text: 'Candidates, elected members and appointed members in Government Coucils(based on election year) by sex in 2016'
+            },
+            subtitle: {
+                text: 'Parliament visualization'
+            },
+            legend: {
+                labelFormat: '{name} <span style="opacity: 0.4">{y}</span>'
+            },
+            series: [{
+                name: 'Candidates, elected members and appointed members in the Legislative Council (based on election year) by sex in 2016',
+                keys: ['name', 'y', 'color', 'label'],
+                data: [
+                    ['Female Candidate', 53, '#009EE0', 'Female Candidate'],
+                    ['Male Candidate', 245, '#FFED00', 'Male Candidate'],
+                    ['Female Elected Member', 12, '#64A12D', 'Female Elected Member'],
+                    ['Male Elected Member', 58, '#EB001F5', 'Male Elected Member'],
+                ],
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.label}'
+                },
+                // Circular options
+                center: ['50%', '88%'],
+                size: '170%',
+                startAngle: -100,
+                endAngle: 100
+            }]
+        });
+    </script>
+
+    <script>
+        Highcharts.chart('container21', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Voter turnout in District Council election in 2015 by sex'
+            },
+            xAxis: {
+                categories: ['18-20', '21-25', '26-30', '31-35', '36-40', '41-45', '46-50', '51-55', '56-60', '61-65', '66-70', '>=71']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Registered Elector'
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color} ">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                shared: true
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'percent'
+                }
+            },
+            series: [{
+                name: 'Female',
+                data: [17244, 36142, 35948, 38976, 46708, 59899, 73882, 95641, 95162, 78264, 60116, 100518]
+            }, {
+                name: 'Male',
+                data: [18163, 39243, 40403, 43302, 47270, 53582, 63912, 85681, 90292, 76877, 61506, 108498]
+            }]
+        });
+    </script>
+    <script>
+        Highcharts.chart('container22', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Voter turnout in Legislative Council election in 2016 by sex'
+            },
+            xAxis: {
+                categories: ['18-20', '21-25', '26-30', '31-35', '36-40', '41-45', '46-50', '51-55', '56-60', '61-65', '66-70', '>=71']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Registered Elector'
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color} ">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                shared: true
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'percent'
+                }
+            },
+            series: [{
+                name: 'Female',
+                data: [34995, 72750, 73411, 75126, 77811, 91477, 107281, 134033, 132631, 105949, 84014, 114431]
+            }, {
+                name: 'Male',
+                data: [36884, 72417, 76912, 78837, 77966, 83466, 92576, 119499, 130187, 106657, 88684, 131429]
+            }]
+        });
+    </script>
+
+
+    <script>
+        Highcharts.chart('container3', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Civil Servant by sex from 2015 to 2017'
+            },
+            xAxis: {
+                categories: [
+                    '2015',
+                    '2016',
+                    '2017'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.0f} </b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Female',
+                data: [61046, 61911, 64112]
+            }, {
+                name: 'Male',
+                data: [103847, 104704, 106231]
+            }]
+        });
+    </script>
+    <script>
+        Highcharts.chart('container4', {
+            chart: {
+                type: 'area'
+            },
+            title: {
+                text: 'Directorate officers in the civil service by sex'
+            },
+            xAxis: {
+                categories: ['2015', '2016', '2017'],
+                tickmarkPlacement: 'on',
+                title: {
+                    enabled: false
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'Number'
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value;
+                    }
+                }
+            },
+            tooltip: {
+                split: true,
+            },
+            plotOptions: {
+                area: {
+                    stacking: 'normal',
+                    lineColor: '#666666',
+                    lineWidth: 1,
+                    marker: {
+                        lineWidth: 1,
+                        lineColor: '#666666'
+                    }
+                }
+            },
+            series: [{
+                name: 'Male',
+                data: [859, 581, 855]
+            }, {
+                name: 'Female',
+                data: [445, 445, 475]
+            }]
+        });
+    </script>
+    <script>
+        Highcharts.chart('container5', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Recipients of Comprehensive Social Security Assistance (CSSA) by Type of Case and sex from 2015 to 2017'
+            },
+            xAxis: {
+                categories: [2015, 2016, 2017]
+            },
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'Number of fruits'
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>' + this.x + '</b><br/>' + this.series.name + ': ' + this.y + '<br/>' + 'Total: ' + this.point.stackTotal;
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+            series: [{
+                name: 'Old Age Male',
+                data: [85616, 83363, 82868],
+                stack: 'male'
+            }, {
+                name: 'Old Age Female',
+                data: [94843, 92973, 91813],
+                stack: 'female'
+            }, {
+                name: 'Permanent Disability Male',
+                data: [12535, 12187, 11726],
+                stack: 'male'
+            }, {
+                name: 'Permanent Disability Female',
+                data: [11510, 11274, 10919],
+                stack: 'female'
+            }, {
+                name: 'Ill Health Male',
+                data: [19524, 18863, 18271],
+                stack: 'male'
+            }, {
+                name: 'Ill Health Female',
+                data: [18398, 18026, 17532],
+                stack: 'female'
+            }, {
+                name: 'Single Parent Male',
+                data: [24511, 23095, 21998],
+                stack: 'male'
+            }, {
+                name: 'Single Parent Female',
+                data: [43426, 41385, 40024],
+                stack: 'female'
+            }, {
+                name: 'Low-earnings Male',
+                data: [10079, 8253, 6964],
+                stack: 'male'
+            }, {
+                name: 'Low-earnings Female',
+                data: [10558, 8604, 7292],
+                stack: 'female'
+            }, {
+                name: 'Unemployment Male',
+                data: [14523, 12555, 11124],
+                stack: 'male'
+            }, {
+                name: ' Unemployment Female',
+                data: [12760, 11208, 10202],
+                stack: 'female'
+            }]
+        });
+    </script>
+    <script>
+        Highcharts.chart('container6', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Persons receiving Social Security Allowance (SSA) by Sex from 2015 to 2017'
+            },
+            xAxis: {
+                categories: [2015, 2016, 2017]
+            },
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'Number of fruits'
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>' + this.x + '</b><br/>' + this.series.name + ': ' + this.y + '<br/>' + 'Total: ' + this.point.stackTotal;
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+            series: [{
+                name: 'Old Age Allowance Male',
+                data: [109804, 116685, 121580],
+                stack: 'male'
+            }, {
+                name: 'Old Age Allowance Female',
+                data: [112561, 119575, 124766],
+                stack: 'female'
+            }, {
+                name: 'Old Age Living Allowance Male',
+                data: [184550, 189235, 202255],
+                stack: 'male'
+            }, {
+                name: 'Old Age Living Allowance Female',
+                data: [109804, 116685, 121580],
+                stack: 'female'
+            }, {
+                name: 'Higher Disability Allowance Male',
+                data: [9261, 9992, 10265],
+                stack: 'male'
+            }, {
+                name: 'Higher Disability Allowance Female',
+                data: [11325, 12025, 12074],
+                stack: 'female'
+            }, {
+                name: 'Normal Disability Allowance Male',
+                data: [55250, 57479, 59954],
+                stack: 'male'
+            }, {
+                name: 'Normal Disability Allowance Female',
+                data: [58556, 61646, 63897],
+                stack: 'female'
+            }]
+        });
+    </script>
+    <script>
+        Highcharts.chart('container', {
+            title: {
+                text: 'Combination chart'
+            },
+            xAxis: {
+                categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+            },
+            labels: {
+                items: [{
+                    html: 'Total fruit consumption',
+                    style: {
+                        left: '50px',
+                        top: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                    }
+                }]
+            },
+            series: [{
+                type: 'column',
+                name: 'Jane',
+                data: [3, 2, 1, 3, 4]
+            }, {
+                type: 'column',
+                name: 'John',
+                data: [2, 3, 5, 7, 6]
+            }, {
+                type: 'column',
+                name: 'Joe',
+                data: [4, 3, 3, 9, 0]
+            }, {
+                type: 'spline',
+                name: 'Average',
+                data: [3, 2.67, 3, 6.33, 3.33],
+                marker: {
+                    lineWidth: 2,
+                    lineColor: Highcharts.getOptions().colors[3],
+                    fillColor: 'white'
+                }
+            }, {
+                type: 'pie',
+                name: 'Electronic Device',
+                data: [{
+                    name: 'Personal Computer',
+                    y: 2764.3,
+                    color: Highcharts.getOptions().colors[0] // Jane's color
+                }, {
+                    name: 'Mobile Phone',
+                    y: 23,
+                    color: Highcharts.getOptions().colors[1] // John's color
+                }, {
+                    name: 'Smartphone',
+                    y: 19,
+                    color: Highcharts.getOptions().colors[2] // Joe's color
+                }],
+                center: [100, 80],
+                size: 100,
+                showInLegend: false,
+                dataLabels: {
+                    enabled: false
+                }
+            }]
+        });
+    </script>
+
+</body>
+
+</html>
