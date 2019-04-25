@@ -263,10 +263,16 @@ hr.socket {
     padding-left: 3rem;
 }
 
-.row {
+
+/* .row {
     padding-left: 7rem;
     padding-right: 7rem;
 }
+
+.rquote {
+    padding-left: -12rem;
+    padding-right: -12rem;
+} */
 
 
 /* Medium queries */
