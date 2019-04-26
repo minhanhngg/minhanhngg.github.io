@@ -478,7 +478,7 @@
             <!-- Start Jumbo -->
             <div class="jumbotron">
                 <div class="col-12 text-center">
-                    <h3 class="heading ">Economy force</h3>
+                    <h3 class="heading ">Economic force</h3>
                     <div class="heading-underline"></div>
                     <h4>Data Analysis & Visualization: Labour Participation Characteristics</h4>
                     <p class="lead">Location: Hong Kong</p><br>
@@ -529,7 +529,9 @@
 
                         <script type="text/javascript">
                             Highcharts.chart('container1', {
-
+                                chart: {
+                                    backgroundColor: null
+                                },
                                 title: {
                                     text: 'Population aged 15 and over by economic activity status and sex'
                                 },
@@ -567,9 +569,11 @@
                                 series: [{
 
                                     name: 'Female',
+                                    color: 'red',
                                     data: [986.0, 1048.0, 1236.1, 1463.8, 1621.2, 1760.4, 1906.0, 1924.3, 1952.2]
                                 }, {
                                     name: 'Male',
+                                    color: 'blue',
                                     data: [1713.7, 1756.1, 1924.7, 1963.5, 1950.6, 1942.7, 1997.2, 1995.8, 1994.4]
                                 }],
 
@@ -598,7 +602,9 @@
 
                         <script type="text/javascript">
                             Highcharts.chart('container2', {
-
+                                chart: {
+                                    backgroundColor: null
+                                },
                                 title: {
                                     text: 'Population aged 15 and over by economic activity status and sex'
                                 },
@@ -636,9 +642,11 @@
                                 series: [{
 
                                     name: 'Female',
+                                    color: 'red',
                                     data: [1030.4, 1139.5, 1350.5, 1419.6, 1461.4, 1564.1, 1576.0, 1587.4, 1592.6]
                                 }, {
                                     name: 'Male',
+                                    color: 'blue',
                                     data: [415.6, 469.2, 617.5, 725.3, 799.0, 897.1, 904.5, 913.4, 924.1]
                                 }],
 
@@ -670,12 +678,14 @@
                         <p class="lead">However, it is important to note that there are more women than men in general. The rising participation rate of females in the economy cannot assumed that women are given equal employment activities. Considering the
                             <i>Economically Inactive</i> category, females are still notably more than males, and the gender gap remain unchanged over the years. </p>
                     </div>
+                    <br><br>
                 </div>
+
                 <!-- end selection ecoforce -->
                 <div id="pay" class="offset">
                     <div class="col-12 light text-center">
                         <br><br>
-                        <h3 class="heading ">Introduction</h3>
+                        <h3 class="heading ">Employment & Income Issues</h3>
                         <div class="heading-underline "></div>
                         <p class="lead" style="color:#975b79; ">Is gender pay inequality a problem in Hong Kong?</p>
                         <p class="lead" style="padding-left: 5rem;padding-right: 5rem; text-align: justify">Hong Kong suffers from the problem of gender pay gap just like anywhere else. Despite being an international finance centre that prides itself on a fair and open business environment, the city still sees its working women earn
@@ -1628,9 +1638,11 @@
                     },
                     series: [{
                         name: 'Female',
+                        color: 'red',
                         data: [17244, 36142, 35948, 38976, 46708, 59899, 73882, 95641, 95162, 78264, 60116, 100518]
                     }, {
                         name: 'Male',
+                        color: 'blue',
                         data: [18163, 39243, 40403, 43302, 47270, 53582, 63912, 85681, 90292, 76877, 61506, 108498]
                     }]
                 });
@@ -1665,9 +1677,11 @@
                     },
                     series: [{
                         name: 'Female',
+                        color: 'red',
                         data: [34995, 72750, 73411, 75126, 77811, 91477, 107281, 134033, 132631, 105949, 84014, 114431]
                     }, {
                         name: 'Male',
+                        color: 'blue',
                         data: [36884, 72417, 76912, 78837, 77966, 83466, 92576, 119499, 130187, 106657, 88684, 131429]
                     }]
                 });
