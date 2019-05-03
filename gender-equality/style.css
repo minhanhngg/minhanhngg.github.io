@@ -280,6 +280,13 @@ hr.socket {
     text-align: justify;
 }
 
+.goto-top {
+    margin-left: -100%;
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+}
+
 
 /* Medium queries */
 
@@ -331,8 +338,14 @@ hr.socket {
         margin-right: 0;
         border: 0;
     } */
-    .narrow {
+    /* .narrow {
         margin: 0 auto;
+    } */
+    .goto-top {
+        margin-left: -100%;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
     }
 }
 
@@ -456,4 +469,8 @@ Extra (xl) large devices (large desktops, 1200px and up)
 
 input[type="number"] {
     min-width: 50px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
